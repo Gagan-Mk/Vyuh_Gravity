@@ -122,14 +122,6 @@ export function Footer() {
                 </button>
               </li>
               <li>
-                <button
-                  onClick={() => scrollToSection("pricing")}
-                  className="text-sm text-muted-foreground hover:text-accent transition-colors"
-                >
-                  Pricing
-                </button>
-              </li>
-              <li>
                 <a
                   href="#"
                   className="text-sm text-muted-foreground hover:text-accent transition-colors"

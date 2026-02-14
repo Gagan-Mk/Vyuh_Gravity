@@ -24,8 +24,29 @@ export function Contact() {
     e.preventDefault();
     setIsLoading(true);
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    const googleFormUrl =
+      "https://docs.google.com/forms/d/e/1FAIpQLSdMUhpYeAmAfUiIymiL7FyOD3OdVt3e6eovypzRV9DvrtEjuA/formResponse";
+
+    const formBody = new URLSearchParams({
+      "entry.1598230340": formData.name,
+      "entry.1600366442": formData.email,
+      "entry.1736626078": formData.company,
+      "entry.1835350331": formData.message,
+    });
+
+    try {
+      await fetch(googleFormUrl, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: formBody.toString(),
+      });
+    } catch {
+      // Google Forms doesn't return a readable response in no-cors mode,
+      // but the submission still goes through
+    }
 
     setIsLoading(false);
     setIsSuccess(true);
@@ -211,27 +232,20 @@ export function Contact() {
         {/* Additional contact options */}
         <div
           ref={infoAnim.ref}
-          className={`mt-16 grid md:grid-cols-3 gap-8 max-w-4xl mx-auto stagger-children`}
+          className={`mt-16 grid md:grid-cols-2 gap-8 max-w-2xl mx-auto stagger-children`}
         >
           <div className={`text-center scroll-fade-in ${infoAnim.isVisible ? 'is-visible' : ''}`}>
             <div className="text-3xl mb-2">📧</div>
             <h4 className="font-semibold mb-1">Email us</h4>
             <p className="text-sm text-muted-foreground">
-              hello@vantageguard.com
-            </p>
-          </div>
-          <div className={`text-center scroll-fade-in ${infoAnim.isVisible ? 'is-visible' : ''}`}>
-            <div className="text-3xl mb-2">💬</div>
-            <h4 className="font-semibold mb-1">Live chat</h4>
-            <p className="text-sm text-muted-foreground">
-              Available Mon-Fri, 9am-6pm EST
+              team@vyuhgravity.com
             </p>
           </div>
           <div className={`text-center scroll-fade-in ${infoAnim.isVisible ? 'is-visible' : ''}`}>
             <div className="text-3xl mb-2">📞</div>
             <h4 className="font-semibold mb-1">Call us</h4>
             <p className="text-sm text-muted-foreground">
-              +1 (555) 123-4567
+              +91 96868 46216
             </p>
           </div>
         </div>
