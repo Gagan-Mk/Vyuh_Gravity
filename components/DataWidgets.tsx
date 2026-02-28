@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Card } from "@/components/ui/card";
 import { useScrollAnimation } from "@/lib/useScrollAnimation";
+import { Newspaper, MessageCircle, PenLine, MessagesSquare } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 export function DataWidgets() {
   const [isVisible, setIsVisible] = useState(false);
@@ -37,11 +39,11 @@ export function DataWidgets() {
     { day: "Sun", value: 78 },
   ];
 
-  const sourceMix = [
-    { source: "News", percentage: 35, icon: "📰" },
-    { source: "Social", percentage: 45, icon: "💬" },
-    { source: "Blogs", percentage: 12, icon: "✍️" },
-    { source: "Forums", percentage: 8, icon: "🗨️" },
+  const sourceMix: { source: string; percentage: number; Icon: LucideIcon }[] = [
+    { source: "News", percentage: 35, Icon: Newspaper },
+    { source: "Social", percentage: 45, Icon: MessageCircle },
+    { source: "Blogs", percentage: 12, Icon: PenLine },
+    { source: "Forums", percentage: 8, Icon: MessagesSquare },
   ];
 
   return (
@@ -186,7 +188,9 @@ export function DataWidgets() {
                     transitionDelay: `${index * 150}ms`,
                   }}
                 >
-                  <div className="text-3xl">{source.icon}</div>
+                  <div className="w-9 h-9 rounded-md bg-accent/10 flex items-center justify-center flex-shrink-0">
+                    <source.Icon size={16} className="text-accent" strokeWidth={1.5} />
+                  </div>
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-1">
                       <span className="text-sm font-medium">{source.source}</span>

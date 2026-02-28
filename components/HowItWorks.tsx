@@ -4,43 +4,45 @@ import { useEffect, useRef, useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useScrollAnimation } from "@/lib/useScrollAnimation";
+import { Globe, Building2, Target, BarChart2, Radio, Lightbulb, Zap, TrendingUp, Check } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
-const philosophies = [
+const philosophies: { title: string; description: string; Icon: LucideIcon; tagline: string }[] = [
   {
     title: "Reach Before Everything",
     description:
       "100,000 people seeing your message beats 1,000 people loving it. First they discover you. Then they engage. Then they convert. Visibility is the foundation.",
-    icon: "🌐",
+    Icon: Globe,
     tagline: "Visibility isn't vanity",
   },
   {
     title: "Build Brands, Not Just Campaigns",
     description:
       "Your brand is the gut feeling people get when they hear your name. We craft the story that makes people care and build ecosystems that last.",
-    icon: "🏗️",
+    Icon: Building2,
     tagline: "Long-term thinking",
   },
   {
     title: "Content With Purpose",
     description:
       "Every post serves a strategic goal: build familiarity, demonstrate value, position authority, and drive action. No filler. No fluff.",
-    icon: "🎯",
+    Icon: Target,
     tagline: "Strategic communication",
   },
   {
     title: "The Numbers Don't Lie",
     description:
       "Advanced analytics tell us the truth. We do more of what works and kill what doesn't. Performance marketing is about spending smarter, not more.",
-    icon: "📊",
+    Icon: BarChart2,
     tagline: "Data-driven decisions",
   },
 ];
 
 // Simulated PR campaign timeline data
-const campaignPhases = [
+const campaignPhases: { phase: string; Icon: LucideIcon; label: string; metrics: { label: string; value: string; trend: string }[] }[] = [
   {
     phase: "Monitor",
-    icon: "📡",
+    Icon: Radio,
     label: "Media Intelligence",
     metrics: [
       { label: "Sources Tracked", value: "2,847", trend: "+12%" },
@@ -50,7 +52,7 @@ const campaignPhases = [
   },
   {
     phase: "Strategize",
-    icon: "🧠",
+    Icon: Lightbulb,
     label: "Campaign Strategy",
     metrics: [
       { label: "Target Journalists", value: "48", trend: "identified" },
@@ -60,7 +62,7 @@ const campaignPhases = [
   },
   {
     phase: "Execute",
-    icon: "🚀",
+    Icon: Zap,
     label: "Content Deployment",
     metrics: [
       { label: "Press Releases", value: "3", trend: "published" },
@@ -70,7 +72,7 @@ const campaignPhases = [
   },
   {
     phase: "Measure",
-    icon: "📈",
+    Icon: TrendingUp,
     label: "Performance Analytics",
     metrics: [
       { label: "Media Impressions", value: "4.2M", trend: "+280%" },
@@ -156,7 +158,9 @@ export function HowItWorks() {
                 transitionDelay: cardsAnim.isVisible ? `${index * 100}ms` : '0ms',
               }}
             >
-              <div className="text-5xl mb-4">{philosophy.icon}</div>
+              <div className="mb-5 w-11 h-11 rounded-lg bg-accent/10 flex items-center justify-center">
+                <philosophy.Icon size={22} className="text-accent" strokeWidth={1.5} />
+              </div>
               <div className="mb-2">
                 <Badge variant="outline" className="text-xs mb-2 border-accent/30 text-accent/80">
                   {philosophy.tagline}
@@ -199,7 +203,9 @@ export function HowItWorks() {
                     : "text-muted-foreground hover:text-foreground hover:bg-muted/20"
                     }`}
                 >
-                  <div className="text-lg mb-1">{phase.icon}</div>
+                  <div className="mb-1 flex justify-center">
+                    <phase.Icon size={17} strokeWidth={1.5} />
+                  </div>
                   <div className="text-xs sm:text-sm font-semibold">{phase.phase}</div>
 
                   {/* Active phase indicator */}
@@ -222,7 +228,9 @@ export function HowItWorks() {
                 <div className="space-y-6">
                   <div>
                     <div className="flex items-center gap-3 mb-3">
-                      <span className="text-3xl">{currentPhase.icon}</span>
+                      <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                        <currentPhase.Icon size={20} className="text-accent" strokeWidth={1.5} />
+                      </div>
                       <div>
                         <h4 className="text-xl font-bold text-foreground">{currentPhase.label}</h4>
                         <p className="text-sm text-muted-foreground">
@@ -260,7 +268,7 @@ export function HowItWorks() {
                               : "bg-muted text-muted-foreground"
                             }`}
                         >
-                          {index < activePhase ? "✓" : index + 1}
+                          {index < activePhase ? <Check size={14} strokeWidth={2.5} /> : index + 1}
                         </div>
                         <div className="flex-1">
                           <div className="text-sm font-semibold">{phase.label}</div>
@@ -335,7 +343,7 @@ export function HowItWorks() {
                   {activePhase === 3 && (
                     <div className="mt-4 p-4 rounded-lg bg-gradient-to-r from-accent/10 to-green-500/10 border border-accent/20">
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="text-lg">🎯</span>
+                        <TrendingUp size={15} className="text-accent" strokeWidth={2} />
                         <span className="text-sm font-semibold text-foreground">Campaign ROI</span>
                       </div>
                       <div className="text-3xl font-bold text-accent">12.4x</div>

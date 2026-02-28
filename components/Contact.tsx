@@ -228,27 +228,6 @@ export function Contact() {
             </form>
           </Card>
         </div>
-
-        {/* Additional contact options */}
-        <div
-          ref={infoAnim.ref}
-          className={`mt-16 grid md:grid-cols-2 gap-8 max-w-2xl mx-auto stagger-children`}
-        >
-          <div className={`text-center scroll-fade-in ${infoAnim.isVisible ? 'is-visible' : ''}`}>
-            <div className="text-3xl mb-2">📧</div>
-            <h4 className="font-semibold mb-1">Email us</h4>
-            <p className="text-sm text-muted-foreground">
-              team@vyuhgravity.com
-            </p>
-          </div>
-          <div className={`text-center scroll-fade-in ${infoAnim.isVisible ? 'is-visible' : ''}`}>
-            <div className="text-3xl mb-2">📞</div>
-            <h4 className="font-semibold mb-1">Call us</h4>
-            <p className="text-sm text-muted-foreground">
-              +91 96868 46216
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );

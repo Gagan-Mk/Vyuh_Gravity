@@ -4,12 +4,13 @@ import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useScrollAnimation } from "@/lib/useScrollAnimation";
+import { Shield, TrendingUp, Layers, GitMerge, BarChart2, FileText } from "lucide-react";
 
 const capabilities = [
   {
     title: "Strategic PR & Reputation Management",
     description: "Shape how the world sees you—proactively building trust, managing narratives, and turning perception into your competitive advantage.",
-    icon: "🎯",
+    Icon: Shield,
     metrics: {
       impact: "Brand Trust",
       delivery: "Ongoing",
@@ -20,7 +21,7 @@ const capabilities = [
   {
     title: "Performance Marketing",
     description: "Campaigns that drive real results. Every rupee spent is tracked, optimized, and scaled based on what actually moves the needle for your business.",
-    icon: "📈",
+    Icon: TrendingUp,
     metrics: {
       impact: "ROI Focused",
       delivery: "Data-Driven",
@@ -31,7 +32,7 @@ const capabilities = [
   {
     title: "Brand Creation & Positioning",
     description: "Build brand identities that command attention, create emotional connections, and turn customers into evangelists.",
-    icon: "✨",
+    Icon: Layers,
     metrics: {
       impact: "Unforgettable",
       delivery: "Strategic",
@@ -42,7 +43,7 @@ const capabilities = [
   {
     title: "Integrated Digital Strategy",
     description: "Blend PR and marketing into a seamless strategy that amplifies your visibility and drives measurable impact.",
-    icon: "🔗",
+    Icon: GitMerge,
     metrics: {
       impact: "Amplified Reach",
       delivery: "Omnichannel",
@@ -53,7 +54,7 @@ const capabilities = [
   {
     title: "Data-Driven Decision Making",
     description: "Transparent dashboards, real-time analytics, and performance tracking give you complete visibility into what's working and why.",
-    icon: "📊",
+    Icon: BarChart2,
     metrics: {
       impact: "Full Transparency",
       delivery: "Real-Time",
@@ -64,7 +65,7 @@ const capabilities = [
   {
     title: "Content Strategy",
     description: "Every post, every image, every word serves a strategic goal. Content that builds familiarity, demonstrates value, and drives action.",
-    icon: "📝",
+    Icon: FileText,
     metrics: {
       impact: "Strategic Value",
       delivery: "Consistent",
@@ -120,8 +121,8 @@ export function Capabilities() {
 
               <div className="relative z-10">
                 {/* Icon */}
-                <div className="text-5xl mb-4 transition-transform duration-300 group-hover:scale-110">
-                  {capability.icon}
+                <div className="mb-4 transition-transform duration-300 group-hover:scale-110">
+                  <capability.Icon size={36} className="text-accent" strokeWidth={1.5} />
                 </div>
 
                 {/* Title & Description */}
