@@ -6,12 +6,6 @@ import { useScrollAnimation } from "@/lib/useScrollAnimation";
 
 const clients: CardStackItem[] = [
   {
-    id: 3,
-    title: "Aatmatrisha",
-    description: "",
-    imageSrc: "/Aatmatrisha.png",
-  },
-  {
     id: 4,
     title: "Audi",
     description: "",
