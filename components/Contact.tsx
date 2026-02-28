@@ -80,10 +80,10 @@ export function Contact() {
             Get in Touch
           </Badge>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            Ready to protect your reputation?
+            Where Preception Becomes Power.
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Get a free reputation audit and see how we can help you take control
+            See how your brand is percived online, and how strategic PR can turn visibility into measurable impact.
           </p>
         </div>
 
@@ -218,7 +218,7 @@ export function Contact() {
                     </span>
                   </>
                 ) : (
-                  "Get your free audit"
+                  "Send Message"
                 )}
               </Button>
 
