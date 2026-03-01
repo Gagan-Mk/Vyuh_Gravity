@@ -6,59 +6,65 @@ import { useScrollAnimation } from "@/lib/useScrollAnimation";
 
 const clients: CardStackItem[] = [
   {
-    id: 4,
+    id: 1,
     title: "Audi",
     description: "",
     imageSrc: "/Audi.png",
   },
   {
-    id: 5,
+    id: 2,
     title: "Bonhomia",
     description: "",
     imageSrc: "/Bonhomia.png",
   },
   {
-    id: 6,
+    id: 3,
     title: "Great White",
     description: "",
     imageSrc: "/GreatWhite.png",
   },
   {
-    id: 7,
+    id: 4,
     title: "Heineken",
     description: "",
     imageSrc: "/Heineken.png",
   },
   {
-    id: 8,
+    id: 5,
     title: "PhysicsWallah",
     description: "",
     imageSrc: "/PhysicWallah.png",
   },
   {
-    id: 9,
+    id: 6,
     title: "Qualcomm",
     description: "",
     imageSrc: "/Qualcomm.png",
   },
   {
-    id: 10,
+    id: 7,
     title: "Royal Enfield",
     description: "",
     imageSrc: "/RoyalEnfield.png",
   },
   {
-    id: 11,
+    id: 8,
     title: "Tata",
     description: "",
     imageSrc: "/Tata.png",
   },
   {
-    id: 12,
+    id: 9,
     title: "Amazon Web Services",
     description: "",
     imageSrc: "/aws.png",
   },
+  {
+    id: 10,
+    title: "Nihar",
+    description: "",
+    imageSrc: "/nihar.png",
+  }
 ];
 
 export function Proof() {
